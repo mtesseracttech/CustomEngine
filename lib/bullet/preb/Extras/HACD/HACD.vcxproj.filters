@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdHACD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdICHull.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdManifoldMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdCircularList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdHACD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdICHull.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdManifoldMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdCircularList.inl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\hacdVector.inl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Bambukas\Desktop\Bambukas\mokslai\project 2.3\CustomEngine\lib\bullet\src\Extras\HACD\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2EF1F99F-F364-369C-A6AE-C02C0369B2EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{CA6844DC-744D-3804-B50E-04F4AE0B932E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
