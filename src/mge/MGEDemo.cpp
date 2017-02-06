@@ -1,12 +1,7 @@
 #include <glm.hpp>
 #include <iostream>
 #include <string>
-#include "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
-#include "BulletCollision/BroadphaseCollision/btDbvtBroadphase.h"
-#include "BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h"
-#include "BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
-#include "BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h"
-#include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h"
+
 using namespace std;
 
 #include "mge/core/Renderer.hpp"
@@ -45,6 +40,8 @@ void MGEDemo::initialize() {
 	cout << "Initializing HUD" << endl;
 	_hud = new DebugHud(_window);
 	cout << "HUD initialized." << endl << endl;
+
+
 }
 
 //build the game _world
