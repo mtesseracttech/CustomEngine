@@ -1,7 +1,9 @@
 #include <iostream>
-
 #include "mge/core/AbstractGame.hpp"
 #include "mge/MGEDemo.hpp"
+#include "mge/KotrynaScene.h"
+#include "mge/BartScene.h"
+#include "mge/MarijnScene.h"
 
 /**
  * Main entry point for the Micro Engine.
@@ -21,13 +23,34 @@
 int main()
 {
     std::cout << "Starting Game" << std::endl;
-
+	/**
     AbstractGame* game = new MGEDemo();
     game->initialize();
     game->run();
-
 	delete game;
-
+	/**/
+	
+	/**/
+	//Kotryna Scene
+	AbstractGame* kotrynaGame = new KotrynaScene();
+	kotrynaGame->initialize();
+	kotrynaGame->run();
+	delete kotrynaGame;
+	/**/
+	/**
+	//Bart Scene
+	AbstractGame* bartScene = new BartScene();
+	bartScene->initialize();
+	bartScene->run();
+	delete bartScene;
+	/**/
+	/**
+	//Marijn Scene
+	AbstractGame* marijnGame = new MarijnScene();
+	marijnGame->initialize();
+	marijnGame->run();
+	delete marijnGame;
+	/**/
     return 0;
 }
 

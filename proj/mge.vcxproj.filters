@@ -79,6 +79,9 @@
     <ClInclude Include="..\src\mge\config.hpp">
       <Filter>MGE Source files\mge</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\mge\KotrynaScene.h">
+      <Filter>MGE Source files\mge</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -133,6 +136,9 @@
       <Filter>MGE Source files\mge\materials</Filter>
     </ClCompile>
     <ClCompile Include="..\src\mge\MGEDemo.cpp">
+      <Filter>MGE Source files\mge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mge\KotrynaScene.cpp">
       <Filter>MGE Source files\mge</Filter>
     </ClCompile>
   </ItemGroup>
