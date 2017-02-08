@@ -21,10 +21,10 @@ class PhysicsGame : public AbstractGame
 		PhysicsGame(const PhysicsGame&);
 		PhysicsGame& operator=(const PhysicsGame&);
 		//Bullet Vars
-		btBroadphaseInterface*					_broadphase;
-		btDefaultCollisionConfiguration*		_collisionConfiguration;
-		btCollisionDispatcher*					_dispatcher;
-		btSequentialImpulseConstraintSolver*	_solver;
-		btDiscreteDynamicsWorld*				_dynamicsWorld;
+		btBroadphaseInterface *					_broadphase;
+		btDefaultCollisionConfiguration *		_collisionConfiguration;
+		btCollisionDispatcher *					_dispatcher;
+		btSequentialImpulseConstraintSolver *	_solver;
+		btDiscreteDynamicsWorld *				_dynamicsWorld;
 };
 

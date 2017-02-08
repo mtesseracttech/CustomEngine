@@ -84,16 +84,6 @@
     </ClInclude>
     <ClInclude Include="PhysicsGame.h">
       <Filter>MGE Source files</Filter>
-    <ClInclude Include="..\src\mge\MarijnScene.h">
-      <Filter>MGE Source files\mge</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\mge\BartScene.h">
-      <Filter>MGE Source files\mge</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\mge\behaviours\MovementBehavior.h">
-      <Filter>MGE Source files\mge\behaviours</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\2.2\3d rendering\Engine\mge_v17_student_version\src\mge\behaviours\OrbitBehaviour.hpp">
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -154,22 +144,8 @@
     <ClCompile Include="..\src\mge\KotrynaScene.cpp">
       <Filter>MGE Source files\mge</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="PhysicsGame.cpp">
       <Filter>MGE Source files</Filter>
-=======
-    <ClCompile Include="..\src\mge\MarijnScene.cpp">
-      <Filter>MGE Source files\mge</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\mge\BartScene.cpp">
-      <Filter>MGE Source files\mge</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\mge\behaviours\MovementBehavior.cpp">
-      <Filter>MGE Source files\mge\behaviours</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\2.2\3d rendering\Engine\mge_v17_student_version\src\mge\behaviours\OrbitBehavior.cpp">
-      <Filter>MGE Source files\mge\behaviours</Filter>
->>>>>>> df2602b3968417b44bd7cd670cd5cddcdab1d1d6
     </ClCompile>
   </ItemGroup>
 </Project>
