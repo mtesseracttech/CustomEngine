@@ -91,7 +91,7 @@ void BartScene::_initializeScene()
 	monkey->setBehaviour(new RotatingBehaviour());
 	_world->add(monkey);
 
-	camera->setBehaviour(new LookAt(teapot));
+	//camera->setBehaviour(new LookAt(teapot,10));
 }
 
 void BartScene::_render() {
