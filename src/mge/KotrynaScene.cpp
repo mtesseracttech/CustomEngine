@@ -1,6 +1,8 @@
 #include <glm.hpp>
 #include <iostream>
 #include <string>
+#include "behaviours/MovementBehavior.h"
+#include "../../../../2.2/3d rendering/Engine/mge_v17_student_version/src/mge/behaviours/OrbitBehaviour.hpp"
 
 using namespace std;
 
@@ -40,8 +42,6 @@ void KotrynaScene::initialize() {
 	cout << "Initializing HUD" << endl;
 	_hud = new DebugHud(_window);
 	cout << "HUD initialized." << endl << endl;
-
-
 }
 
 //build the game _world
@@ -49,49 +49,41 @@ void KotrynaScene::_initializeScene()
 {
 	_renderer->setClearColor(0, 0, 0);
 
-	//add camera first (it will be updated last)
-	Camera* camera = new Camera("camera", glm::vec3(0, 6, 7));
-	camera->rotate(glm::radians(-40.0f), glm::vec3(1, 0, 0));
+	Camera* camera = new Camera("camera", glm::vec3(0, 0, 0));
+	//camera->rotate(glm::radians(-40.0f), glm::vec3(1, 0, 0));
 	_world->add(camera);
 	_world->setMainCamera(camera);
 
 	//MESHES
-
-	//load a bunch of meshes we will be using throughout this demo
 	//each mesh only has to be loaded once, but can be used multiple times:
-	//F is flat shaded, S is smooth shaded (normals aligned or not), check the models folder!
-	Mesh* planeMeshDefault = Mesh::load(config::MGE_MODEL_PATH + "plane.obj");
-	//Mesh* cubeMeshF = Mesh::load (config::MGE_MODEL_PATH+"cube_flat.obj");
-	Mesh* suzannaMeshF = Mesh::load(config::MGE_MODEL_PATH + "suzanna_flat.obj");
-	Mesh* teapotMeshS = Mesh::load(config::MGE_MODEL_PATH + "teapot_smooth.obj");
+	Mesh* planeMeshDefault = Mesh::load(config::MGE_MODEL_PATH + "plane_8192.obj");
+	Mesh* player = Mesh::load(config::MGE_MODEL_PATH + "bb81.obj");//cube_smooth
 
 	//MATERIALS
-
-	AbstractMaterial* colorMaterial = new ColorMaterial(glm::vec3(0.2f, 0, 0.2f));
-	AbstractMaterial* textureMaterial = new TextureMaterial(Texture::load(config::MGE_TEXTURE_PATH + "land.jpg"));
-	AbstractMaterial* textureMaterial2 = new TextureMaterial(Texture::load(config::MGE_TEXTURE_PATH + "bricks.jpg"));
+	AbstractMaterial* colorMaterial = new ColorMaterial(glm::vec3(0.2f, 0.2f, 0.2f));
+	AbstractMaterial* textureMaterial = new TextureMaterial(Texture::load(config::MGE_TEXTURE_PATH + "water.jpg"));
+	AbstractMaterial* brickMaterial = new TextureMaterial(Texture::load(config::MGE_TEXTURE_PATH + "bb8.jpg"));
 
 	//SCENE SETUP
 
 	GameObject* plane = new GameObject("plane", glm::vec3(0, 0, 0));
-	plane->scale(glm::vec3(5, 5, 5));
+	plane->scale(glm::vec3(100, 1, 100));
 	plane->setMesh(planeMeshDefault);
 	plane->setMaterial(textureMaterial);
 	_world->add(plane);
 
-	GameObject* teapot = new GameObject("teapot", glm::vec3(-3, 1, 0));
-	teapot->setMesh(teapotMeshS);
-	teapot->setMaterial(textureMaterial2);
-	teapot->setBehaviour(new KeysBehaviour());
-	_world->add(teapot);
+	GameObject* cube = new GameObject("player", glm::vec3(0, 1, 0));
+	//cube->scale(glm::vec3(5, 5, 5));
+	cube->scale(glm::vec3(0.2f, 0.2f, 0.2f));
+	cube->setMesh(player);
+	cube->setMaterial(brickMaterial);
+	_world->add(cube);
+	cube->setBehaviour(new MovementBehavior(300,300));
 
-	GameObject* monkey = new GameObject("monkey", glm::vec3(3, 1, 0));
-	monkey->setMesh(suzannaMeshF);
-	monkey->setMaterial(colorMaterial);
-	monkey->setBehaviour(new RotatingBehaviour());
-	_world->add(monkey);
-
-	camera->setBehaviour(new LookAt(teapot));
+	
+	//camera->setBehaviour(new LookAt(plane,20));
+	camera->setBehaviour(new OrbitBehaviour(150, cube));
+	
 }
 
 void KotrynaScene::_render() {

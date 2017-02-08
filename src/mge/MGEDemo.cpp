@@ -91,7 +91,7 @@ void MGEDemo::_initializeScene()
     monkey->setBehaviour (new RotatingBehaviour());
     _world->add(monkey);
 
-    camera->setBehaviour(new LookAt (teapot));
+    
 }
 
 void MGEDemo::_render() {

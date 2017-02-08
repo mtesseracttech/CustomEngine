@@ -82,6 +82,18 @@
     <ClInclude Include="..\src\mge\KotrynaScene.h">
       <Filter>MGE Source files\mge</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\mge\MarijnScene.h">
+      <Filter>MGE Source files\mge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\mge\BartScene.h">
+      <Filter>MGE Source files\mge</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\mge\behaviours\MovementBehavior.h">
+      <Filter>MGE Source files\mge\behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\2.2\3d rendering\Engine\mge_v17_student_version\src\mge\behaviours\OrbitBehaviour.hpp">
+      <Filter>MGE Source files\mge\behaviours</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -140,6 +152,18 @@
     </ClCompile>
     <ClCompile Include="..\src\mge\KotrynaScene.cpp">
       <Filter>MGE Source files\mge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mge\MarijnScene.cpp">
+      <Filter>MGE Source files\mge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mge\BartScene.cpp">
+      <Filter>MGE Source files\mge</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mge\behaviours\MovementBehavior.cpp">
+      <Filter>MGE Source files\mge\behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\2.2\3d rendering\Engine\mge_v17_student_version\src\mge\behaviours\OrbitBehavior.cpp">
+      <Filter>MGE Source files\mge\behaviours</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

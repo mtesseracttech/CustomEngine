@@ -23,6 +23,7 @@
 int main()
 {
     std::cout << "Starting Game" << std::endl;
+
 	/**
     AbstractGame* game = new MGEDemo();
     game->initialize();

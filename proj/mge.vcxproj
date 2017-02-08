@@ -166,10 +166,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\2.2\3d rendering\Engine\mge_v17_student_version\src\mge\behaviours\OrbitBehaviour.hpp" />
     <ClInclude Include="..\src\glm.hpp" />
+    <ClInclude Include="..\src\mge\BartScene.h" />
     <ClInclude Include="..\src\mge\behaviours\AbstractBehaviour.hpp" />
     <ClInclude Include="..\src\mge\behaviours\KeysBehaviour.hpp" />
     <ClInclude Include="..\src\mge\behaviours\LookAt.hpp" />
+    <ClInclude Include="..\src\mge\behaviours\MovementBehavior.h" />
     <ClInclude Include="..\src\mge\behaviours\RotatingBehaviour.hpp" />
     <ClInclude Include="..\src\mge\config.hpp" />
     <ClInclude Include="..\src\mge\core\AbstractGame.hpp" />
@@ -181,6 +184,7 @@
     <ClInclude Include="..\src\mge\core\Texture.hpp" />
     <ClInclude Include="..\src\mge\core\World.hpp" />
     <ClInclude Include="..\src\mge\KotrynaScene.h" />
+    <ClInclude Include="..\src\mge\MarijnScene.h" />
     <ClInclude Include="..\src\mge\materials\AbstractMaterial.hpp" />
     <ClInclude Include="..\src\mge\materials\ColorMaterial.hpp" />
     <ClInclude Include="..\src\mge\materials\TextureMaterial.hpp" />
@@ -188,10 +192,13 @@
     <ClInclude Include="..\src\mge\util\DebugHud.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\2.2\3d rendering\Engine\mge_v17_student_version\src\mge\behaviours\OrbitBehavior.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\mge\BartScene.cpp" />
     <ClCompile Include="..\src\mge\behaviours\AbstractBehaviour.cpp" />
     <ClCompile Include="..\src\mge\behaviours\KeysBehaviour.cpp" />
     <ClCompile Include="..\src\mge\behaviours\LookAt.cpp" />
+    <ClCompile Include="..\src\mge\behaviours\MovementBehavior.cpp" />
     <ClCompile Include="..\src\mge\behaviours\RotatingBehaviour.cpp" />
     <ClCompile Include="..\src\mge\core\AbstractGame.cpp" />
     <ClCompile Include="..\src\mge\core\Camera.cpp" />
@@ -202,6 +209,7 @@
     <ClCompile Include="..\src\mge\core\Texture.cpp" />
     <ClCompile Include="..\src\mge\core\World.cpp" />
     <ClCompile Include="..\src\mge\KotrynaScene.cpp" />
+    <ClCompile Include="..\src\mge\MarijnScene.cpp" />
     <ClCompile Include="..\src\mge\materials\AbstractMaterial.cpp" />
     <ClCompile Include="..\src\mge\materials\ColorMaterial.cpp" />
     <ClCompile Include="..\src\mge\materials\TextureMaterial.cpp" />
