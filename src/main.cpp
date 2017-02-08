@@ -34,7 +34,7 @@ int main()
 	
 
 	//Physics Scene
-	/**/
+	/**
 	AbstractGame* physicsScene = new PhysicsGame();
 	physicsScene->initialize();
 	physicsScene->run();
@@ -42,7 +42,7 @@ int main()
 	/**/
 
 
-	/**
+	/**/
 	//Kotryna Scene
 	AbstractGame* kotrynaGame = new KotrynaScene();
 	kotrynaGame->initialize();

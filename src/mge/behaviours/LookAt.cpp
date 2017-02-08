@@ -20,7 +20,6 @@ void LookAt::update(float pStep)
 void LookAt::UpdatePosition()
 {
 
-	
 		glm::mat4 rotation = glm::rotate(glm::mat4(), glm::radians(_targetPosition.y), glm::vec3(0, 1, 0)) * glm::rotate(glm::mat4(), glm::radians(_targetPosition.x), glm::vec3(1, 0, 0));
 
 		glm::vec3 transform = glm::vec3(0, 0, _distance);

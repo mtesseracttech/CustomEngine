@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 #include "behaviours/MovementBehavior.h"
-#include "../../../../2.2/3d rendering/Engine/mge_v17_student_version/src/mge/behaviours/OrbitBehaviour.hpp"
+#include "behaviours/OrbitBehavior.h"
+
 
 using namespace std;
 
@@ -19,8 +20,6 @@ using namespace std;
 #include "mge/materials/ColorMaterial.hpp"
 #include "mge/materials/TextureMaterial.hpp"
 
-#include "mge/behaviours/RotatingBehaviour.hpp"
-#include "mge/behaviours/KeysBehaviour.hpp"
 #include "mge/behaviours/LookAt.hpp"
 
 #include "mge/util/DebugHud.hpp"
@@ -83,7 +82,7 @@ void KotrynaScene::_initializeScene()
 
 	
 	//camera->setBehaviour(new LookAt(plane,20));
-	camera->setBehaviour(new OrbitBehaviour(150, cube));
+	camera->setBehaviour(new OrbitBehavior(150, cube));
 	
 }
 

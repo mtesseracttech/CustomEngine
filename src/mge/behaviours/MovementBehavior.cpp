@@ -2,6 +2,7 @@
 #include <SFML/Window/Keyboard.hpp>
 #include "MovementBehavior.h"
 #include <SFML/Window/Mouse.hpp>
+# define M_PI          3.141592653589793238462643383279502884L /* pi */
 MovementBehavior::MovementBehavior(float pMoveSpeedZ, float pMoveSpeedX, float pTurn) : AbstractBehaviour(), _moveSpeedZ(pMoveSpeedZ), _moveSpeedX(pMoveSpeedX), _turnSpeed(pTurn)
 {
 }
@@ -16,37 +17,47 @@ void MovementBehavior::update(float pStep)
 
 void MovementBehavior::UpdateMovement(float pStep)
 {
+	//get mouse position
+	_mousePos = glm::vec2(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
+
+	glm::mat4 translationMatrix;
+	glm::mat4 myIdentityMatrix = glm::mat4(1.0f);
+	glm::mat4 rotationMatrix;
+
 	float moveSpeedZ = 0.0f; //default if no keys
 	float turnSpeed = 0.0f;
 	float moveSpeedX = 0.0f;
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-		moveSpeedZ = _moveSpeedZ;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 		moveSpeedZ = -_moveSpeedZ;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-		moveSpeedX =- _moveSpeedX;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		moveSpeedZ = _moveSpeedZ;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-		moveSpeedX = _moveSpeedX;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		moveSpeedX =  _moveSpeedX;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+		moveSpeedX = -_moveSpeedX;
 	}
 
-	glm::vec3 transform = glm::vec3(moveSpeedX*pStep, 0, moveSpeedZ*pStep);
-	//get mouse position
-	_mousePos = glm::vec2(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
+	glm::vec4 transform = glm::vec4(moveSpeedX*pStep, 0, moveSpeedZ*pStep,1);
 
-	//get angle between player and mouse. set it to radians
+	glm::vec3 myRotationAxis = glm::vec3(0, 1, 0);
 
-	glm::vec3 forward = glm::normalize(_owner->getTransform()[2]);
-	glm::vec3 _mouseXY = glm::normalize( glm::vec3(_mousePos.x, 0, _mousePos.y));
-	float angle = glm::normalizeDot(forward, _mouseXY);
-	//rotate object with angle
-	_owner->rotate(angle , glm::vec3(0, 1, 0));
+	//TransformedVector = TranslationMatrix * RotationMatrix *  OriginalVector;
+	//glm::vec3 forward = glm::normalize(_owner->getTransform()[2]);
+	/**
+	float dx = _mousePos.x - _owner->getLocalPosition().x;
+	float dy = _mousePos.y - _owner->getLocalPosition().y;
+	float angleinradians = std::atan2(dy, dx);
+	float angleindegrees = angleinradians * 180 / M_PI;
+	/**/
 
-	//translate the object in its own local space
-	//_owner->translate(glm::vec3(moveSpeedX*pStep, 0.0f, moveSpeedZ*pStep));
+	
+	glm::vec4 transformedVector = translationMatrix * transform;
+
+	_owner->translate(transformedVector);
 
 	
 }
