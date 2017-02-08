@@ -56,7 +56,7 @@ void KotrynaScene::_initializeScene()
 
 	//MESHES
 	//each mesh only has to be loaded once, but can be used multiple times:
-	Mesh* planeMeshDefault = Mesh::load(config::MGE_MODEL_PATH + "plane_8192.obj");
+	Mesh* planeMeshDefault = Mesh::load(config::MGE_MODEL_PATH + "plane_8192.obj");//plane_8192
 	Mesh* player = Mesh::load(config::MGE_MODEL_PATH + "bb81.obj");//cube_smooth
 
 	//MATERIALS
@@ -68,6 +68,7 @@ void KotrynaScene::_initializeScene()
 
 	GameObject* plane = new GameObject("plane", glm::vec3(0, 0, 0));
 	plane->scale(glm::vec3(100, 1, 100));
+	//plane->scale(glm::vec3(0.5f, 0.5f, 0.5f));
 	plane->setMesh(planeMeshDefault);
 	plane->setMaterial(textureMaterial);
 	_world->add(plane);

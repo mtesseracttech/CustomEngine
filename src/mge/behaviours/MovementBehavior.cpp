@@ -32,6 +32,8 @@ void MovementBehavior::UpdateMovement(float pStep)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
 		moveSpeedX = _moveSpeedX;
 	}
+
+	glm::vec3 transform = glm::vec3(moveSpeedX*pStep, 0, moveSpeedZ*pStep);
 	//get mouse position
 	_mousePos = glm::vec2(sf::Mouse::getPosition().x, sf::Mouse::getPosition().y);
 
@@ -44,7 +46,7 @@ void MovementBehavior::UpdateMovement(float pStep)
 	_owner->rotate(angle , glm::vec3(0, 1, 0));
 
 	//translate the object in its own local space
-	_owner->translate(glm::vec3(moveSpeedX*pStep, 0.0f, moveSpeedZ*pStep));
+	//_owner->translate(glm::vec3(moveSpeedX*pStep, 0.0f, moveSpeedZ*pStep));
 
 	
 }
