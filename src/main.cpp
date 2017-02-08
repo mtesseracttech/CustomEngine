@@ -4,6 +4,7 @@
 #include "mge/KotrynaScene.h"
 #include "mge/BartScene.h"
 #include "mge/MarijnScene.h"
+#include "../proj/PhysicsGame.h"
 
 /**
  * Main entry point for the Micro Engine.
@@ -30,7 +31,17 @@ int main()
 	delete game;
 	/**/
 	
+
+	//Physics Scene
 	/**/
+	AbstractGame* physicsScene = new PhysicsGame();
+	physicsScene->initialize();
+	physicsScene->run();
+	delete physicsScene;
+	/**/
+
+
+	/**
 	//Kotryna Scene
 	AbstractGame* kotrynaGame = new KotrynaScene();
 	kotrynaGame->initialize();

@@ -82,6 +82,9 @@
     <ClInclude Include="..\src\mge\KotrynaScene.h">
       <Filter>MGE Source files\mge</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsGame.h">
+      <Filter>MGE Source files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp">
@@ -140,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="..\src\mge\KotrynaScene.cpp">
       <Filter>MGE Source files\mge</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsGame.cpp">
+      <Filter>MGE Source files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 #include <glm.hpp>
 #include <iostream>
 #include <string>
+#include <glm/glm.hpp>
 
 using namespace std;
 
@@ -67,9 +68,9 @@ void MGEDemo::_initializeScene()
 
     //MATERIALS
 
-    AbstractMaterial* colorMaterial = new ColorMaterial (glm::vec3(0.2f,0,0.2f));
-    AbstractMaterial* textureMaterial = new TextureMaterial (Texture::load (config::MGE_TEXTURE_PATH+"land.jpg"));
-    AbstractMaterial* textureMaterial2 = new TextureMaterial (Texture::load (config::MGE_TEXTURE_PATH+"bricks.jpg"));
+    AbstractMaterial* colorMaterial		= new ColorMaterial (glm::vec3(0.2f,0,0.2f));
+    AbstractMaterial* textureMaterial	= new TextureMaterial (Texture::load (config::MGE_TEXTURE_PATH+"land.jpg"));
+    AbstractMaterial* textureMaterial2	= new TextureMaterial (Texture::load (config::MGE_TEXTURE_PATH+"bricks.jpg"));
 
     //SCENE SETUP
 
