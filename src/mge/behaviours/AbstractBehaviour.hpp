@@ -1,5 +1,7 @@
 #ifndef ABSTRACTBEHAVIOUR_H
 #define ABSTRACTBEHAVIOUR_H
+#include "Physics/RigidBody.h"
+
 
 class GameObject;
 

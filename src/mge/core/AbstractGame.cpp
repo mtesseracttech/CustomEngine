@@ -1,6 +1,7 @@
 #include "AbstractGame.hpp"
 
 #include <iostream>
+#include "mge/config.hpp"
 using namespace std;
 
 #include "mge/core/Renderer.hpp"
@@ -34,7 +35,7 @@ void AbstractGame::initialize() {
 
 void AbstractGame::_initializeWindow() {
 	cout << "Initializing window..." << endl;
-	_window = new sf::RenderWindow( sf::VideoMode(1920,1080,64), "Liber8", sf::Style::Default);
+	_window = new sf::RenderWindow(sf::VideoMode(720, 480), "Liber8", sf::Style::Default, sf::ContextSettings(32, 0, 0, 3, 3, 0, false));
 	_window->setVerticalSyncEnabled(true);
 
     cout << "Window initialized." << endl << endl;
@@ -92,7 +93,6 @@ void AbstractGame::run()
 	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 	sf::Time timePerFrame = sf::seconds(1.0f / 60.0f);
 
-
 	while (_window->isOpen()) {
 		timeSinceLastUpdate += updateClock.restart();
 
@@ -131,9 +131,6 @@ void AbstractGame::_processEvents()
 
 	//we must empty the event queue
 	while( _window->pollEvent( event ) ) {
-        //give all system event listeners a chance to handle events
-        //optionally to be implemented by you...
-        //SystemEventDispatcher::dispatchEvent(event);
 
         switch (event.type) {
             case sf::Event::Closed:
@@ -144,11 +141,11 @@ void AbstractGame::_processEvents()
                     exit = true;
                 }
                 break;
-            case sf::Event::Resized:
-                //would be better to move this to the renderer
-                //this version implements nonconstrained match viewport scaling
-                glViewport(0, 0, event.size.width, event.size.height);
-                break;
+			case sf::Event::Resized:
+				//would be better to move this to the renderer
+				//this version implements nonconstrained match viewport scaling
+				glViewport(0, 0, event.size.width, event.size.height);
+				break;
 
             default:
                 break;
@@ -159,6 +156,3 @@ void AbstractGame::_processEvents()
         _window->close();
 	}
 }
-
-
-

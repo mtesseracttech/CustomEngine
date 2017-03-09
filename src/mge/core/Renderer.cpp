@@ -14,10 +14,13 @@ using namespace std;
 Renderer::Renderer()
 {
 	glEnable( GL_DEPTH_TEST );
+	glDepthMask(GL_TRUE);
 	glEnable( GL_CULL_FACE ); // default GL_BACK
-    glEnable (GL_BLEND);
-	glEnable(GL_CULL_FACE);
-    glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable (GL_BLEND);
+	//glEnable(GL_FRAMEBUFFER_SRGB);
+	glClearDepth(1.0f);
+	glDepthFunc(GL_LEQUAL);
+	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glClearColor((float)0x2d/0xff, (float)0x6b/0xff, (float)0xce/0xff, 1.0f );
 }
 
@@ -63,5 +66,3 @@ void Renderer::renderChildren (GameObject* pGameObject, const glm::mat4& pModelM
         render (child, pModelMatrix * child->getTransform(), pViewMatrix, pProjectionMatrix, pRecursive);
     }
 }
-
-

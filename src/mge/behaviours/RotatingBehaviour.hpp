@@ -9,11 +9,13 @@
 class RotatingBehaviour : public AbstractBehaviour
 {
 	public:
-		RotatingBehaviour();
+		RotatingBehaviour(float pSpeed, float pAngle);
 		virtual ~RotatingBehaviour();
+		void update(float pStep) override;
 
-		virtual void update(float pStep);
-
+	private:
+		float _speed;
+		float _angle;
 };
 
 #endif // ROTATINGBEHAVIOUR_H

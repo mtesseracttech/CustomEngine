@@ -21,7 +21,6 @@ class Renderer;
 class AbstractGame
 {
     public:
-
         AbstractGame();
         virtual ~AbstractGame();
 

@@ -152,7 +152,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;SFML_STATIC;GLEW_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../src;../lib/bullet/src/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../src;../lib/bullet/src/src;../lib/spark/lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -163,14 +163,34 @@
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>..\lib\vs_extended\lib;..\lib\spark\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\AI\Enemy\EnemyAgent.h" />
+    <ClInclude Include="..\src\AI\Enemy\States\AbstractEnemyState.h" />
+    <ClInclude Include="..\src\AI\Enemy\States\AttackState.h" />
+    <ClInclude Include="..\src\AI\Enemy\States\ChaseState.h" />
+    <ClInclude Include="..\src\AI\Enemy\States\LookoutState.h" />
+    <ClInclude Include="..\src\AI\Enemy\States\PatrolState.h" />
+    <ClInclude Include="..\src\AI\Enemy\States\ReturnState.h" />
+    <ClInclude Include="..\src\AI\Navigation\NavigationNode.h" />
+    <ClInclude Include="..\src\AI\Navigation\NavigationPath.h" />
     <ClInclude Include="..\src\glm.hpp" />
+    <ClInclude Include="..\src\MgeVMath.h" />
+    <ClInclude Include="..\src\mge\audio\MusicPlayer.hpp" />
+    <ClInclude Include="..\src\mge\audio\ResourceIdentifiers.h" />
+    <ClInclude Include="..\src\mge\audio\SFMLResourceHolder.h" />
+    <ClInclude Include="..\src\mge\audio\SoundPlayer.hpp" />
     <ClInclude Include="..\src\mge\behaviours\AbstractBehaviour.hpp" />
     <ClInclude Include="..\src\mge\behaviours\KeysBehaviour.hpp" />
     <ClInclude Include="..\src\mge\behaviours\LookAt.hpp" />
+    <ClInclude Include="..\src\mge\behaviours\MovementBehaviour.h" />
+    <ClInclude Include="..\src\mge\behaviours\OrbCamera.h" />
+    <ClInclude Include="..\src\mge\behaviours\OrbitBehavior.h" />
     <ClInclude Include="..\src\mge\behaviours\RotatingBehaviour.hpp" />
+    <ClInclude Include="..\src\mge\behaviours\ShootingBehaviourPlayer.h" />
+    <ClInclude Include="..\src\mge\behaviours\ShootingBehaviourTeapot.h" />
     <ClInclude Include="..\src\mge\config.hpp" />
     <ClInclude Include="..\src\mge\core\AbstractGame.hpp" />
     <ClInclude Include="..\src\mge\core\Camera.hpp" />
@@ -181,19 +201,44 @@
     <ClInclude Include="..\src\mge\core\Texture.hpp" />
     <ClInclude Include="..\src\mge\core\World.hpp" />
     <ClInclude Include="..\src\mge\KotrynaScene.h" />
+    <ClInclude Include="..\src\mge\lights\Light.hpp" />
+    <ClInclude Include="..\src\mge\lights\LightTypes.hpp" />
     <ClInclude Include="..\src\mge\materials\AbstractMaterial.hpp" />
     <ClInclude Include="..\src\mge\materials\ColorMaterial.hpp" />
+    <ClInclude Include="..\src\mge\materials\LitMaterial.h" />
     <ClInclude Include="..\src\mge\materials\TextureMaterial.hpp" />
-    <ClInclude Include="..\src\mge\MGEDemo.hpp" />
+    <ClInclude Include="..\src\mge\objects\Bullet.h" />
+    <ClInclude Include="..\src\mge\objects\Interactable.hpp" />
+    <ClInclude Include="..\src\mge\objects\Trigger.h" />
     <ClInclude Include="..\src\mge\util\DebugHud.hpp" />
-    <ClInclude Include="PhysicsGame.h" />
+    <ClInclude Include="..\src\Physics\MgeRigidbody.h" />
+    <ClInclude Include="..\src\Physics\PhysicsWorld.h" />
+    <ClInclude Include="..\src\Physics\PhysicsWorldGame.h" />
+    <ClInclude Include="..\src\Physics\RigidBody.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\AI\Enemy\EnemyAgent.cpp" />
+    <ClCompile Include="..\src\AI\Enemy\States\AbstractEnemyState.cpp" />
+    <ClCompile Include="..\src\AI\Enemy\States\AttackState.cpp" />
+    <ClCompile Include="..\src\AI\Enemy\States\ChaseState.cpp" />
+    <ClCompile Include="..\src\AI\Enemy\States\LookoutState.cpp" />
+    <ClCompile Include="..\src\AI\Enemy\States\PatrolState.cpp" />
+    <ClCompile Include="..\src\AI\Enemy\States\ReturnState.cpp" />
+    <ClCompile Include="..\src\AI\Navigation\NavigationNode.cpp" />
+    <ClCompile Include="..\src\AI\Navigation\NavigationPath.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\MgeVMath.cpp" />
+    <ClCompile Include="..\src\mge\audio\MusicPlayer.cpp" />
+    <ClCompile Include="..\src\mge\audio\SoundPlayer.cpp" />
     <ClCompile Include="..\src\mge\behaviours\AbstractBehaviour.cpp" />
     <ClCompile Include="..\src\mge\behaviours\KeysBehaviour.cpp" />
     <ClCompile Include="..\src\mge\behaviours\LookAt.cpp" />
+    <ClCompile Include="..\src\mge\behaviours\MovementBehaviour.cpp" />
+    <ClCompile Include="..\src\mge\behaviours\OrbCamera.cpp" />
+    <ClCompile Include="..\src\mge\behaviours\OrbitBehavior.cpp" />
     <ClCompile Include="..\src\mge\behaviours\RotatingBehaviour.cpp" />
+    <ClCompile Include="..\src\mge\behaviours\ShootingBehaviourPlayer.cpp" />
+    <ClCompile Include="..\src\mge\behaviours\ShootingBehaviourTeapot.cpp" />
     <ClCompile Include="..\src\mge\core\AbstractGame.cpp" />
     <ClCompile Include="..\src\mge\core\Camera.cpp" />
     <ClCompile Include="..\src\mge\core\GameObject.cpp" />
@@ -203,12 +248,20 @@
     <ClCompile Include="..\src\mge\core\Texture.cpp" />
     <ClCompile Include="..\src\mge\core\World.cpp" />
     <ClCompile Include="..\src\mge\KotrynaScene.cpp" />
+    <ClCompile Include="..\src\mge\lights\Light.cpp" />
+    <ClCompile Include="..\src\mge\lights\LightTypes.cpp" />
     <ClCompile Include="..\src\mge\materials\AbstractMaterial.cpp" />
     <ClCompile Include="..\src\mge\materials\ColorMaterial.cpp" />
+    <ClCompile Include="..\src\mge\materials\LitMaterial.cpp" />
     <ClCompile Include="..\src\mge\materials\TextureMaterial.cpp" />
-    <ClCompile Include="..\src\mge\MGEDemo.cpp" />
+    <ClCompile Include="..\src\mge\objects\Bullet.cpp" />
+    <ClCompile Include="..\src\mge\objects\Interactable.cpp" />
+    <ClCompile Include="..\src\mge\objects\Trigger.cpp" />
     <ClCompile Include="..\src\mge\util\DebugHud.cpp" />
-    <ClCompile Include="PhysicsGame.cpp" />
+    <ClCompile Include="..\src\Physics\MgeRigidbody.cpp" />
+    <ClCompile Include="..\src\Physics\PhysicsWorld.cpp" />
+    <ClCompile Include="..\src\Physics\PhysicsWorldGame.cpp" />
+    <ClCompile Include="..\src\Physics\RigidBody.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\lib\bullet\preb\src\BulletCollision\BulletCollision.vcxproj">

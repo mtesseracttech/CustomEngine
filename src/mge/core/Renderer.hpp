@@ -2,7 +2,6 @@
 #define RENDERER_H
 
 #include <glm.hpp>
-
 class World;
 class GameObject;
 class Camera;

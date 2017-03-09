@@ -3,6 +3,7 @@
 
 #include <string>
 #include "mge/core/GameObject.hpp"
+#include "glm.hpp"
 
 /**
  * Camera is just a GameObject with an additional projection matrix.

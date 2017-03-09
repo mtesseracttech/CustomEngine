@@ -1,33 +1,33 @@
-#ifndef KOTRYNASCENE_H
-#define KOTRYNASCENE_H
+#pragma once
+#include "mge/core/AbstractGame.hpp"
+#include "mge/util/DebugHud.hpp"
+#include "Physics/PhysicsWorld.h"
+#include "audio/MusicPlayer.hpp"
 
-#include <mge/core/AbstractGame.hpp>
-
-class DebugHud;
 
 class KotrynaScene : public AbstractGame
 {
-	//PUBLIC FUNCTIONS
-
 public:
 	KotrynaScene();
 	virtual ~KotrynaScene();
-
-	virtual void initialize();
-
+	void initialize();
+	
 protected:
 	virtual void _initializeScene();
-
-	//override render to render the hud as well.
+	virtual void _initializeWorld();
 	virtual void _render();
+	virtual void _update(float pStep);
 
 private:
-	DebugHud* _hud;                   //hud display
-
+	//DebugHud*			_walkableHUD;
+	//DebugHud*			_shootingHUD;
+	DebugHud*			_hud;
+	//DebugHud*			_hudTime;
+	//DebugHud*			_hudAmmo;
+//	DebugHud*			_hudFeedback;
+	PhysicsWorld*		_physicsWorld;
+	MusicPlayer _musicPlayer;
 	void _updateHud();
+	bool _trig = false;
 
-	KotrynaScene(const KotrynaScene&);
-	KotrynaScene& operator=(const KotrynaScene&);
 };
-
-#endif // KOTRYNASCENE_H
